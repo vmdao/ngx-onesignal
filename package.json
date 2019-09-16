@@ -1,16 +1,16 @@
 {
   "name": "ngx-onesignal",
-  "version": "8.0.0",
+  "version": "1.0.0",
   "requiredAngularVersion": ">=7.0.0",
   "engines": {
     "node": ">=10.6.0",
     "npm": ">6.7.0"
   },
   "description": "angular 7+ OneSignal Service",
-  "author": "M.Sakamaki <mail@m.sakamaki.jp>",
+  "author": "VmDao <vuminhdao@outlook.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MSakamaki/ngx-onesignal"
+    "url": "https://github.com/vmdao/ngx-onesignal"
   },
   "husky": {
     "hooks": {
