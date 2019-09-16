@@ -64,7 +64,7 @@ export class OneSignalService {
   }
 
   @ExecIf('isInitialized')
-  public push(method: OneSignalStubFuncionList, value: undefined) {
+  public push(method: OneSignalStubFuncionList, value: any) {
     if (this.isSupported) {
       return OneSignal.push([method, value]);
     }
