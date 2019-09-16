@@ -64,8 +64,11 @@ export class OneSignalService {
   }
 
   @ExecIf('isInitialized')
-  public push(method: OneSignalStubFuncionList, value: any) {
+  public push(method: OneSignalStubFuncionList | Function, value?: any) {
     if (this.isSupported) {
+      if (typeof method === 'function') {
+        return OneSignal.push(method);
+      }
       return OneSignal.push([method, value]);
     }
   }
@@ -106,7 +109,7 @@ export class OneSignalService {
       ...this.options,
     });
 
-    await OneSignal.on('subscriptionChange', isSubscribed => {
+    OneSignal.on('subscriptionChange', isSubscribed => {
       this.isSubscribe$.next(isSubscribed);
     });
 
