@@ -73,6 +73,13 @@ export class OneSignalService {
     }
   }
 
+  @ExecIf('isInitialized')
+  public pushFn(method: Function) {
+    if (this.isSupported) {
+      return OneSignal.push(method);
+    }
+  }
+
   constructor(
     @Inject(DOCUMENT) private readonly doc: Document,
     private readonly options: OneSignalOptions,
