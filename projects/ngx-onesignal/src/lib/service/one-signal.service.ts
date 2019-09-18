@@ -18,13 +18,13 @@ export class OneSignalService {
   private scriptinitalize = false;
   private readonly scriptURL = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
 
-  private readonly isSupported$ = new BehaviorSubject<boolean>(false);
   private readonly isSubscribe$ = new BehaviorSubject<boolean>(false);
   private readonly isOptedOut$ = new BehaviorSubject<boolean>(false);
   private readonly isPushNotificationsEnabled$ = new BehaviorSubject<boolean>(
     false,
   );
 
+  public readonly isSupported$ = new BehaviorSubject<boolean>(false);
   public get isSupported(): boolean {
     return this.isSupported$.value;
   }
@@ -41,7 +41,6 @@ export class OneSignalService {
     return this.isOptedOut$.value;
   }
 
-  @ExecIf('isInitialized')
   public subscribe() {
     if (this.isSupported) {
       if (this.isOptedOut$.value) {
@@ -56,14 +55,12 @@ export class OneSignalService {
    * call OneSignal.setSubscription(false)
    * @see {@link https://documentation.onesignal.com/docs/web-push-sdk#section--setsubscription-}
    */
-  @ExecIf('isInitialized')
   public unsubscribe() {
     if (this.isSubscribe) {
       OneSignal.setSubscription(false);
     }
   }
 
-  @ExecIf('isInitialized')
   public push(method: OneSignalStubFuncionList | any, value?: any) {
     if (this.isSupported) {
       if (typeof method === 'function') {
@@ -73,44 +70,36 @@ export class OneSignalService {
     }
   }
 
-  @ExecIf('isInitialized')
   public pushFn(method: any) {
     if (this.isSupported) {
       return OneSignal.push(method);
     }
   }
-
-  @ExecIf('isInitialized')
   public sendTag(key: string, value: string): Promise<any> {
+    console.log('sendTag', key, value, this.isSupported);
     if (this.isSupported) {
       return OneSignal.sendTag(key, value);
     }
   }
-
-  @ExecIf('isInitialized')
   public sendTags(keyValues: object): Promise<any> {
     if (this.isSupported) {
       return OneSignal.sendTags(keyValues);
     }
   }
-
-  @ExecIf('isInitialized')
   public deleteTag(key: string): Promise<any> {
     if (this.isSupported) {
       return OneSignal.deleteTag(key);
     }
   }
-
-  @ExecIf('isInitialized')
   public deleteTags(keys: Array<string>): Promise<any> {
     if (this.isSupported) {
       return OneSignal.deleteTags(keys);
     }
   }
 
-  @ExecIf('isInitialized')
   public on(fun: string, callback: (result: any) => void) {
     if (this.isSupported) {
+      console.log('on1234');
       OneSignal.on(fun, callback);
     }
   }

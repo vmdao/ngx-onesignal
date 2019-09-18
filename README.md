@@ -52,7 +52,7 @@ see [sample code](https://github.com/MSakamaki/ngx-onesignal/tree/master/src/app
 npx ng build --prod
 
 # npm run server
-npx light-server -s ./dist/client -p 4000 --historyindex /index.html
+npx light-server -s ./dist/client -p 4200 --historyindex /index.html
 ```
 
 ### 5. add Universal
@@ -64,7 +64,7 @@ npx @angular/cli add @nguniversal/express-engine --clientProject [project name]
 # build universal
 npm run build:ssr
 
-# run server ( http://localhost:4000 )
+# run server ( http://localhost:4200 )
 npm run serve:ssr
 ```
 
