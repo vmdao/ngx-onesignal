@@ -6,7 +6,7 @@ import {
   OneSignalStubFuncionList,
 } from '../interface';
 
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, bindCallback, Observable } from 'rxjs';
 
 declare var OneSignal: OneSignalStub;
 
@@ -101,10 +101,14 @@ export class OneSignalService {
     }
   }
 
-  public on(fun: string, callback: (result: any) => void) {
+  public on(fun: string, callback?: (result: any) => void): Observable<any> {
     if (this.isSupported) {
-      console.log('on1234');
-      OneSignal.on(fun, callback);
+      if (typeof callback === 'function') {
+        OneSignal.on(fun, callback);
+      } else {
+        const onObservable = bindCallback(OneSignal.on);
+        return onObservable(fun);
+      }
     }
   }
 

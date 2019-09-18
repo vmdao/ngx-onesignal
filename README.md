@@ -2,7 +2,6 @@
 
 ## Implement some function of Onesignal
 
-- on(event:string, callback: function) => void
 - pushTag(key:string, value:string) => void
 - pushTags(objValues: object) => void
 - deleteTag(key:string) => void
@@ -10,6 +9,8 @@
 - setExternalUserId(id:string) => void
 - removeExternalUserId() => void
 - getExternalUserId() => string
+- on(event:string, callback?: function) => void : Promise<any>
+  Can you callback or Observable of rxjs
 
 # NgxOnesignal
 
