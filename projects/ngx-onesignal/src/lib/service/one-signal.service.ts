@@ -5,7 +5,7 @@ import {
   OneSignalOptions,
   OneSignalStubFuncionList,
 } from '../interface';
-import { ExecIf } from '../decorators';
+
 import { BehaviorSubject } from 'rxjs';
 
 declare var OneSignal: OneSignalStub;
@@ -75,22 +75,26 @@ export class OneSignalService {
       return OneSignal.push(method);
     }
   }
+
   public sendTag(key: string, value: string): Promise<any> {
     console.log('sendTag', key, value, this.isSupported);
     if (this.isSupported) {
       return OneSignal.sendTag(key, value);
     }
   }
+
   public sendTags(keyValues: object): Promise<any> {
     if (this.isSupported) {
       return OneSignal.sendTags(keyValues);
     }
   }
+
   public deleteTag(key: string): Promise<any> {
     if (this.isSupported) {
       return OneSignal.deleteTag(key);
     }
   }
+
   public deleteTags(keys: Array<string>): Promise<any> {
     if (this.isSupported) {
       return OneSignal.deleteTags(keys);
@@ -101,6 +105,24 @@ export class OneSignalService {
     if (this.isSupported) {
       console.log('on1234');
       OneSignal.on(fun, callback);
+    }
+  }
+
+  public setExternalUserId(id: string) {
+    if (this.isSupported) {
+      return OneSignal.setExternalUserId(id);
+    }
+  }
+
+  public removeExternalUserId() {
+    if (this.isSupported) {
+      return OneSignal.removeExternalUserId();
+    }
+  }
+
+  public getExternalUserId() {
+    if (this.isSupported) {
+      return OneSignal.getExternalUserId();
     }
   }
 

@@ -58,6 +58,12 @@ export interface OneSignalStub {
   on: (func: string, callback: (result: any) => void) => void;
 
   once: (func: string, callback: (result: any) => void) => void;
+
+  setExternalUserId: (id: string) => void;
+
+  removeExternalUserId: () => void;
+
+  getExternalUserId: () => string;
 }
 
 /**

@@ -1,3 +1,16 @@
+# I fored and update feature for NgxOnesignal
+
+## Implement some function of Onesignal
+
+- on(event:string, callback: function) => void
+- pushTag(key:string, value:string) => void
+- pushTags(objValues: object) => void
+- deleteTag(key:string) => void
+- deleteTags(keys:Array<string>) => void
+- setExternalUserId(id:string) => void
+- removeExternalUserId() => void
+- getExternalUserId() => string
+
 # NgxOnesignal
 
 Angular [OneSignal](https://onesignal.com/)
@@ -25,7 +38,7 @@ make Custom Code APP and get appId.
 
 ### 2. run angular cli + add
 
-*`npx @angular/cli` will be replaced by the `ng` command if the angular cli is installed*
+_`npx @angular/cli` will be replaced by the `ng` command if the angular cli is installed_
 
 ```sh
 # generate angular project
@@ -70,22 +83,22 @@ npm run serve:ssr
 
 ## Development environment support
 
-+ OSX 10.x
-+ node v10
+- OSX 10.x
+- node v10
 
 ## Tasks
 
-+ [x] format (prettier)
-+ [x] npm publish
-+ [x] ng_add
-  + [x] add NgxOneSignalModule to root module
-  + [x] add OneSignalSDKWorkers file
-  + [x] add OneSignalSDKWorkers to angular.json
-  + [x] replace ServiceWorkerModule.register file
-+ [x] [sandbox test](https://www.kevinschuchard.com/blog/2018-11-20-schematic-sandbox/)
-+ [ ] unit testing
-+ [ ] e2e testing
-  + [ ] cypress
-+ [x] universal
-+ [x] [nrwl/nx](https://nx.dev/) workspace support
-+ [x] ci/cd
+- [x] format (prettier)
+- [x] npm publish
+- [x] ng_add
+  - [x] add NgxOneSignalModule to root module
+  - [x] add OneSignalSDKWorkers file
+  - [x] add OneSignalSDKWorkers to angular.json
+  - [x] replace ServiceWorkerModule.register file
+- [x] [sandbox test](https://www.kevinschuchard.com/blog/2018-11-20-schematic-sandbox/)
+- [ ] unit testing
+- [ ] e2e testing
+  - [ ] cypress
+- [x] universal
+- [x] [nrwl/nx](https://nx.dev/) workspace support
+- [x] ci/cd
