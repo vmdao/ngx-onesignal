@@ -64,7 +64,7 @@ export class OneSignalService {
   }
 
   @ExecIf('isInitialized')
-  public push(method: OneSignalStubFuncionList | Function, value?: any) {
+  public push(method: OneSignalStubFuncionList | any, value?: any) {
     if (this.isSupported) {
       if (typeof method === 'function') {
         return OneSignal.push(method);
@@ -74,9 +74,44 @@ export class OneSignalService {
   }
 
   @ExecIf('isInitialized')
-  public pushFn(method: Function) {
+  public pushFn(method: any) {
     if (this.isSupported) {
       return OneSignal.push(method);
+    }
+  }
+
+  @ExecIf('isInitialized')
+  public sendTag(key: string, value: string): Promise<any> {
+    if (this.isSupported) {
+      return OneSignal.sendTag(key, value);
+    }
+  }
+
+  @ExecIf('isInitialized')
+  public sendTags(keyValues: object): Promise<any> {
+    if (this.isSupported) {
+      return OneSignal.sendTags(keyValues);
+    }
+  }
+
+  @ExecIf('isInitialized')
+  public deleteTag(key: string): Promise<any> {
+    if (this.isSupported) {
+      return OneSignal.deleteTag(key);
+    }
+  }
+
+  @ExecIf('isInitialized')
+  public deleteTags(keys: Array<string>): Promise<any> {
+    if (this.isSupported) {
+      return OneSignal.deleteTags(keys);
+    }
+  }
+
+  @ExecIf('isInitialized')
+  public on(fun: string, callback: (result: any) => void) {
+    if (this.isSupported) {
+      OneSignal.on(fun, callback);
     }
   }
 
