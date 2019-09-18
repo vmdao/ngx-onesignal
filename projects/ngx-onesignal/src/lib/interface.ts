@@ -55,7 +55,7 @@ export interface OneSignalStub {
 
   deleteTags: (keys: Array<string>) => Promise<Array<any>>;
 
-  on: (func: string, callback: (result: any) => void) => void;
+  on: (func: string, callback?: (result: any) => void) => Promise<any>;
 
   once: (func: string, callback: (result: any) => void) => void;
 
