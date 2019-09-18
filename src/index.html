@@ -9,24 +9,6 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#1976d2" />
-    <script
-      src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
-      async=""
-    ></script>
-    <script>
-      var OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: '31c6b7b7-e2ad-4039-953e-e8f73f0f7e1c',
-          notifyButton: {
-            enable: true,
-          },
-          allowLocalhostAsSecureOrigin: true,
-        });
-
-        OneSignal.setExternalUserId('1234');
-      });
-    </script>
   </head>
   <body>
     <app-root></app-root>

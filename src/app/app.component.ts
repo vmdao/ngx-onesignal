@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
       if (value) {
         const now = Date.now() + '';
         console.log('now', now);
-        this.onesignal.sendTag('id', now);
+        // this.onesignal.sendTag('id', now);
         this.onesignal.on('notificationDisplay', d => {
           console.log('notificationDisplay ', d);
         });

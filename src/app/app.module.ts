@@ -10,8 +10,8 @@ import { environment } from '../environments/environment';
   imports: [
     NgxOneSignalModule.forRoot({
       appId: '31c6b7b7-e2ad-4039-953e-e8f73f0f7e1c',
-      allowLocalhostAsSecureOrigin: true,
       autoResubscribe: true,
+      allowLocalhostAsSecureOrigin: true,
     }),
     BrowserModule,
     ServiceWorkerModule.register('OneSignalSDKWorker.js', {

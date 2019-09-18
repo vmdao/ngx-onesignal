@@ -6,7 +6,7 @@ import {
   OneSignalStubFuncionList,
 } from '../interface';
 
-import { BehaviorSubject, bindCallback, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 declare var OneSignal: OneSignalStub;
 
