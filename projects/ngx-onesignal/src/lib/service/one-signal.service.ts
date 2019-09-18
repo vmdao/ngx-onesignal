@@ -101,13 +101,20 @@ export class OneSignalService {
     }
   }
 
-  public on(fun: string, callback?: (result: any) => void): Observable<any> {
+  public on(fun: string, callback?: (result: any) => void): Promise<any> {
     if (this.isSupported) {
       if (typeof callback === 'function') {
         OneSignal.on(fun, callback);
       } else {
-        const onObservable = bindCallback(OneSignal.on);
-        return onObservable(fun);
+        return new Promise((resolve, reject) => {
+          try {
+            OneSignal.on(fun, message => {
+              return resolve(message);
+            });
+          } catch (error) {
+            reject(error);
+          }
+        });
       }
     }
   }

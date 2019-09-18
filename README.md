@@ -10,7 +10,7 @@
 - removeExternalUserId() => void
 - getExternalUserId() => string
 - on(event:string, callback?: function) => void : Promise<any>
-  Can you callback or Observable of rxjs
+  Can you callback or Promise
 
 # NgxOnesignal
 
