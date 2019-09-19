@@ -76,7 +76,7 @@ export class OneSignalService {
     }
   }
 
-  public getTags(callback?: () => void): Promise<any> {
+  public getTags(callback?: (tags) => void): Promise<any> {
     if (this.isSupported) {
       return OneSignal.getTags(callback);
     }

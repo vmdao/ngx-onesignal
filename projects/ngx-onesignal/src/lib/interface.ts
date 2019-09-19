@@ -47,7 +47,7 @@ export interface OneSignalStub {
 
   push: (fnc: any | Array<string | any>) => void;
 
-  getTags: (callback: () => void) => Promise<Array<any>>;
+  getTags: (callback: (tags) => void) => Promise<Array<any>>;
   sendTag: (key: string, value: string) => Promise<Array<any>>;
 
   sendTags: (keyValues: object) => Promise<Array<any>>;
