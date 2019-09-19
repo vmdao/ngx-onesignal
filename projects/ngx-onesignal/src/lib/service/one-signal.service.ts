@@ -76,8 +76,13 @@ export class OneSignalService {
     }
   }
 
+  public getTags(callback?: () => void): Promise<any> {
+    if (this.isSupported) {
+      return OneSignal.getTags(callback);
+    }
+  }
+
   public sendTag(key: string, value: string): Promise<any> {
-    console.log('sendTag', key, value, this.isSupported);
     if (this.isSupported) {
       return OneSignal.sendTag(key, value);
     }
