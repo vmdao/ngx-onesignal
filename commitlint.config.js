@@ -3,6 +3,6 @@ module.exports = {
 
   rules: {
     'type-enum': [2, 'always', ['build', 'feat', 'fix', 'refactor', 'release', 'style','docs','test', 'chore', 'ci']],
-    'scope-enum': [2, 'always', ['ngx-onesignal', 'sandbox']]
+    'scope-enum': [2, 'always', ['ngx-onesignal-plus', 'sandbox']]
   }
 };

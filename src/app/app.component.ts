@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OneSignalService } from '../../dist/ngx-onesignal';
+import { OneSignalService } from '../../dist/ngx-onesignal-plus';
 
 @Component({
   selector: 'app-root',

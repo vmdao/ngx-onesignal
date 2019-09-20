@@ -137,33 +137,33 @@
         }
       }
     },
-    "ngx-onesignal": {
-      "root": "projects/ngx-onesignal",
-      "sourceRoot": "projects/ngx-onesignal/src",
+    "ngx-onesignal-plus": {
+      "root": "projects/ngx-onesignal-plus",
+      "sourceRoot": "projects/ngx-onesignal-plus/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ngx-onesignal/tsconfig.lib.json",
-            "project": "projects/ngx-onesignal/ng-package.json"
+            "tsConfig": "projects/ngx-onesignal-plus/tsconfig.lib.json",
+            "project": "projects/ngx-onesignal-plus/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-onesignal/src/test.ts",
-            "tsConfig": "projects/ngx-onesignal/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-onesignal/karma.conf.js"
+            "main": "projects/ngx-onesignal-plus/src/test.ts",
+            "tsConfig": "projects/ngx-onesignal-plus/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-onesignal-plus/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-onesignal/tsconfig.lib.json",
-              "projects/ngx-onesignal/tsconfig.spec.json"
+              "projects/ngx-onesignal-plus/tsconfig.lib.json",
+              "projects/ngx-onesignal-plus/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

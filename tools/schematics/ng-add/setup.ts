@@ -53,7 +53,7 @@ function addNgxOnesignalModule(options: ngxOneSignalSchema): Rule {
       );
     }
 
-    addModuleImportToRootModule(tree, MODULE_NAME, 'ngx-onesignal', project);
+    addModuleImportToRootModule(tree, MODULE_NAME, 'ngx-onesignal-plus', project);
     context.logger.info('✅️ Import NgxOneSignalModule into root module');
     return tree;
   };

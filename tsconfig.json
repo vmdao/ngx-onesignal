@@ -20,11 +20,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-onesignal": [
-        "projects/ngx-onesignal/src/public_api.ts"
+      "ngx-onesignal-plus": [
+        "projects/ngx-onesignal-plus/src/public_api.ts"
       ],
-      "ngx-onesignal/*": [
-        "projects/ngx-onesignal/*"
+      "ngx-onesignal-plus/*": [
+        "projects/ngx-onesignal-plus/*"
       ]
     }
   }

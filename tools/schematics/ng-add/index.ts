@@ -11,7 +11,7 @@ import {
 } from '@angular-devkit/schematics/tasks';
 import { Schema as ngxOneSignalSchema } from './schema';
 import { installDependencies } from './installer/dependencies';
-import { addPackageJsonDependencies } from './installer/ngx-onesignal';
+import { addPackageJsonDependencies } from './installer/ngx-onesignal-plus';
 import { appVersion, angularCdkVersion } from '../util/versions';
 import { NodeDependencyType } from '@schematics/angular/utility/dependencies';
 
@@ -19,8 +19,8 @@ export function ngxOnesignal(options: ngxOneSignalSchema): Rule {
   return (tree: Tree, context: SchematicContext) => {
     return chain([
       addPackageJsonDependencies(
-        'ngx-onesignal',
-        process.env.HAS_SANDBOX ? `file:../ngx-onesignal.tgz` : appVersion,
+        'ngx-onesignal-plus',
+        process.env.HAS_SANDBOX ? `file:../ngx-onesignal-plus.tgz` : appVersion,
         NodeDependencyType.Default
       ),
       addPackageJsonDependencies(

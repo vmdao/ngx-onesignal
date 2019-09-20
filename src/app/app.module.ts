@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxOneSignalModule } from '../../dist/ngx-onesignal';
+import { NgxOneSignalModule } from '../../dist/ngx-onesignal-plus';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
       appId: '31c6b7b7-e2ad-4039-953e-e8f73f0f7e1c',
       autoResubscribe: true,
       allowLocalhostAsSecureOrigin: true,
+      notificationClickHandlerMatch: 'origin',
     }),
     BrowserModule,
     ServiceWorkerModule.register('OneSignalSDKWorker.js', {

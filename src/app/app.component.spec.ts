@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ngx-onesignal'`, () => {
+  it(`should have as title 'ngx-onesignal-plus'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ngx-onesignal');
+    expect(app.title).toEqual('ngx-onesignal-plus');
   });
 
   it('should render title in a h1 tag', () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to ngx-onesignal!',
+      'Welcome to ngx-onesignal-plus!',
     );
   });
 });

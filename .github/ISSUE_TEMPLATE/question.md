@@ -27,6 +27,6 @@ Angular:
 Angular CDK:
 Angular CLI:
 Nx (option):
-ngx-onesignal:
+ngx-onesignal-plus:
 
 #### Is there anything else we should know?

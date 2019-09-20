@@ -69,7 +69,7 @@ The type must be one of the following:
 
 The scope must be one of the following:
 
-- ngx-onesignal - modification or additional to ngx-onesignal feature
+- ngx-onesignal-plus - modification or additional to ngx-onesignal-plus feature
 - sandbox - involved in sandbox testing
 
 ##### Subject
